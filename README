@@ -1,0 +1,5 @@
+I have a slightly-wrong-speed Flemish audio track for Frozen, which wants to
+speed-corrected, and I also want to attach my subtitles file that lists all
+the pieces of music as they come up - and to combine in the lyrics and trans,
+as available. What better way to do this than to put together a quick makefile
+to pull pieces together?
