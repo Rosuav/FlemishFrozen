@@ -1,4 +1,3 @@
 *.wav
 *.mkv
-LetItGo.srt
-combined.srt
+_*.srt
