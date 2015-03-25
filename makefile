@@ -1,7 +1,7 @@
 Frozen - Flemish.mkv: ../FrozenOST/Original\ movie.mkv Flemish_corrected.wav _combined.srt
 	avconv -y -i ../FrozenOST/Original\ movie.mkv -i Flemish_corrected.wav -i _combined.srt -map 0:v -map 1:a -map 2:s -c:v copy -c:s copy "Frozen - Flemish.mkv"
 
-_combined.srt: ../FrozenOST/trackids.srt _LetItGo.srt _Snowman.srt _Forever.srt
+_combined.srt: ../FrozenOST/trackids.srt _LetItGo.srt _Snowman.srt _Forever.srt _Summer.srt
 	pike ../shed/srtzip.pike $^ $@
 
 # Note that the offsets in these blocks are derived from trackids.srt - but not (currently) automatically.
@@ -14,6 +14,9 @@ _Snowman.srt: Snowman.srt
 
 _Forever.srt: Forever.srt
 	pike ../shed/srtoffset.pike $^ 00:13:22,750 $@
+
+_Summer.srt: Summer.srt
+	pike ../shed/srtoffset.pike $^ 00:47:31,520 $@
 
 Flemish_corrected.wav: Flemish.wav
 	sox $^ -S $@ speed 0.959067188519243 delay 1 1 1 1 1 1
