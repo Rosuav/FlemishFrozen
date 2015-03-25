@@ -1,4 +1,4 @@
-Frozen - Flemish.mkv: ../FrozenOST/Original\ movie.mkv Flemish_corrected.wav _combined.srt
+Frozen\ -\ Flemish.mkv: ../FrozenOST/Original\ movie.mkv Flemish_corrected.wav _combined.srt
 	avconv -y -i ../FrozenOST/Original\ movie.mkv -i Flemish_corrected.wav -i _combined.srt -map 0:v -map 1:a -map 2:s -c:v copy -c:s copy "Frozen - Flemish.mkv"
 
 _combined.srt: ../FrozenOST/trackids.srt _LetItGo.srt _Snowman.srt _Forever.srt _Summer.srt
