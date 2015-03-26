@@ -4,7 +4,7 @@ Frozen\ -\ Flemish.mkv: ../FrozenOST/Original\ movie.mkv Flemish_corrected.wav _
 # Shorthand: 'make srt' to rebuild the SRT without rebuilding the whole movie (which takes several minutes)
 srt: _combined.srt
 
-_combined.srt: ../FrozenOST/trackids.srt _LetItGo.srt _Snowman.srt _Forever.srt _Summer.srt _Forever_Reprise.srt
+_combined.srt: ../FrozenOST/trackids.srt _LetItGo.srt _Snowman.srt _Forever.srt _Summer.srt _Forever_Reprise.srt _Reindeer.srt
 	pike ../shed/srtzip.pike $^ $@
 
 # Note that the offsets in these blocks are derived from trackids.srt - but not (currently) automatically.
@@ -23,6 +23,9 @@ _Summer.srt: Summer.srt
 
 _Forever_Reprise.srt: Forever_Reprise.srt
 	pike ../shed/srtoffset.pike $^ 00:55:42,950 $@
+
+_Reindeer.srt: Reindeer.srt
+	pike ../shed/srtoffset.pike $^ 00:38:41,450 $@
 
 Flemish_corrected.wav: Flemish.wav
 	sox $^ -S $@ speed 0.959067188519243 delay 1 1 1 1 1 1
