@@ -5,7 +5,7 @@ Frozen\ -\ Flemish.mkv: ../FrozenOST/Original\ movie.mkv Flemish_corrected.wav _
 srt: _combined.srt
 
 _combined.srt: ../FrozenOST/audiotracks.srt _LetItGo.srt _Snowman.srt _Forever.srt _Summer.srt _Forever_Reprise.srt _Reindeer.srt _OpenDoor.srt
-	pike ../shed/srtzip.pike $^ $@
+	pike ../shed/srtzip.pike --clobber $^ $@
 
 # Note that the offsets in these blocks are derived from trackids.srt - but not (currently) automatically.
 _LetItGo.srt: ../LetItTrans/Flemish\ -\ Laat\ Het\ Los.srt
